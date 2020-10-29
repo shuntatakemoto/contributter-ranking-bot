@@ -7,10 +7,15 @@ import schedule
 from datetime import datetime, date, timedelta
 from requests_oauthlib import OAuth1Session
 
-CONSUMER_KEY = '************'
-CONSUMER_SECRET = '************'
-ACCESS_TOKEN = '************'
-ACCESS_TOKEN_SECRET = '************'
+# CONSUMER_KEY = '************'
+# CONSUMER_SECRET = '************'
+# ACCESS_TOKEN = '************'
+# ACCESS_TOKEN_SECRET = '************'
+CONSUMER_KEY = 'ZYA53tMZKfNzBLs2TaO55FoPb'
+CONSUMER_SECRET = 't4cWmCPrfWCsX1h8plNmDKECWo2cT1FzeElkTPRgctzzBzx4bK'
+ACCESS_TOKEN = '2394621961-tvFfqY9WwddA2eInYZEcz4g2iOhikNbHg4VGluj'
+ACCESS_TOKEN_SECRET = 'mLYxC4ilMWDih9uhePtGrVrRthzweeSBE3tPHtpgKDpsb'
+
 twitter = OAuth1Session(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 
 #昨日の日付を取得
@@ -86,8 +91,8 @@ for get_c_number in tweets:
 #list1とlist2を辞書にする
 rank_data=dict(zip(list1,list5))
 
-#matumo0724さんを削除
-removed_rank_data = rank_data.pop('matumo0724')
+#***さんを除外
+removed_rank_data = rank_data.pop('***')
 
 #contiributionが多い順に並び替える
 rank_data2=sorted(rank_data.items(),key=lambda x:int(x[1]), reverse=True)
