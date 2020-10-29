@@ -88,8 +88,8 @@ for get_c_number in tweets:
 #list1とlist2を辞書にする
 rank_data=dict(zip(list1,list5))
 
-#matumo0724さんを除外
-removed_rank_data = rank_data.pop('matumo0724')
+#***さんを除外
+removed_rank_data = rank_data.pop('***')
 
 #contiributionが多い順に並び替える
 rank_data2=sorted(rank_data.items(),key=lambda x:int(x[1]), reverse=True)
